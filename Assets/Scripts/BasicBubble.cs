@@ -9,4 +9,10 @@ public class BasicBubble : MonoBehaviour
         if (collision.gameObject.tag == "Sharp")
             Destroy(gameObject, 0.1f);
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Freeze")
+            GameManager.instance.TransformBubble(gameObject, GameManager.instance.frozenBubble);
+    }
 }

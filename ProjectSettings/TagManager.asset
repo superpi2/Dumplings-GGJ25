@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Sharp
+  - Freeze
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Player
   - 
   - 
   - 
@@ -40,11 +41,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3764600359
+    locked: 0
   - name: Platform
     uniqueID: 2068031141
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effects
+    uniqueID: 166899757
     locked: 0
   - name: Player
     uniqueID: 319121407

@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    SpriteRenderer sprite;
+    Animator animator;
+
+    public float targetVelocity;
 
     bool grounded;
     bool wallLeft;
@@ -13,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        sprite = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -22,41 +29,63 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
+
         PhysicsLoop();
 
         if (wallLeft)
-            rb.velocity = new Vector2(2f, 0f);
+            targetVelocity = Mathf.Abs(targetVelocity);
         else if (wallRight)
-            rb.velocity = new Vector2(-2f, 0f);
+            targetVelocity = -Mathf.Abs(targetVelocity);
+
+        sprite.flipX = targetVelocity < 0f;
+        animator.SetBool("Falling", !grounded);
     }
 
     void PhysicsLoop()
     {
-        Vector2 origin = (Vector2)transform.position + new Vector2(0f, -0.5f);
-        Vector2 size = new Vector2(0.5f, 1 / 32f);
+        Vector2 origin = (Vector2)transform.position + new Vector2(0f, -0.6f);
+        Vector2 size = new Vector2(0.6f, 1 / 32f);
 
-        RaycastHit2D[] hit = Physics2D.BoxCastAll(
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(
             origin, size, 0f, Vector2.down, 0f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(origin - size / 2f, size, Color.red);
 
-        grounded = hit.Length > 0;
+        grounded = hits.Length > 0;
 
-        origin = (Vector2)transform.position + new Vector2(-0.25f, 0f);
-        size = new Vector2(1 / 32f, 0.9f);
+        origin = (Vector2)transform.position + new Vector2(-0.3f, 0f);
+        size = new Vector2(1 / 32f, 1f);
 
-        hit = Physics2D.BoxCastAll(
+        wallLeft = false;
+
+        hits = Physics2D.BoxCastAll(
             origin, size, 0f, Vector2.down, 0f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(origin - size / 2f, size, Color.green);
 
-        wallLeft = hit.Length > 0;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider != null && !hit.collider.usedByEffector)
+            {
+                wallLeft = true;
+                break;
+            }
+        }
 
-        origin = (Vector2)transform.position + new Vector2(0.25f, 0f);
-        size = new Vector2(1 / 32f, 0.9f);
+        wallRight = false;
 
-        hit = Physics2D.BoxCastAll(
+        origin = (Vector2)transform.position + new Vector2(0.3f, 0f);
+
+        hits = Physics2D.BoxCastAll(
             origin, size, 0f, Vector2.down, 0f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(origin - size / 2f, size, Color.green);
 
-        wallRight = hit.Length > 0;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider != null && !hit.collider.usedByEffector)
+            {
+                wallRight = true;
+                break;
+            }
+        }
     }
 }
