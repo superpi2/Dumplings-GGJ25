@@ -31,7 +31,6 @@ public class KeyManager : MonoBehaviour
             if (Input.GetKeyDown(key))
             {
                 keyStates[key] = !keyStates[key];
-                Debug.Log(key + " " + keyStates[key]);
             }
         }
     }
