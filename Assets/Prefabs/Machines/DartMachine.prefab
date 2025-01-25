@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1724867457
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0.5, b: 0, a: 1}
@@ -101,3 +101,4 @@ MonoBehaviour:
   fire: 0
   path: []
   dartPrefab: {fileID: 2815306977029803928, guid: 2eb9f9690cf638140b2b1a51f85b0ca3, type: 3}
+  force: 10

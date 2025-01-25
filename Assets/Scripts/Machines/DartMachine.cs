@@ -11,6 +11,7 @@ public class DartMachine : MonoBehaviour
     int currentTarget;
 
     public GameObject dartPrefab;
+    public float force;
     float cooldown = 0f;
 
     private void Start()
@@ -35,7 +36,7 @@ public class DartMachine : MonoBehaviour
             cooldown = 0.25f;
 
             GameObject proj = Instantiate(dartPrefab, transform.position, transform.rotation);
-            proj.GetComponent<Rigidbody2D>().AddForce(10f * transform.up, ForceMode2D.Impulse);
+            proj.GetComponent<Rigidbody2D>().AddForce(force * transform.up, ForceMode2D.Impulse);
             Destroy(proj, 5f);
         }
     }

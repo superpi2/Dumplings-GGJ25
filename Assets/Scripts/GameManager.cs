@@ -6,9 +6,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [HideInInspector] string currentStage;
+    public static int currentStage = -1;
 
-    public int stagesCleared;
+    public int levelsCleared = -1;
 
     public GameObject bubble;
     public GameObject frozenBubble;
@@ -17,20 +17,15 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
-        currentStage = "TestStage";
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        stagesCleared = PlayerPrefs.GetInt("S", 0);
+        if (levelsCleared < 0)
+            levelsCleared = Mathf.Max(0, PlayerPrefs.GetInt("S", 0));
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && currentStage != -1)
         {
-            SceneFader.instance.FadeToScene(currentStage);
+            SceneFader.instance.FadeToScene("Stage" + currentStage);
         }
     }
 
@@ -42,5 +37,18 @@ public class GameManager : MonoBehaviour
         nBubble.transform.SetParent(null);
 
         Destroy(oBubble);
+    }
+
+    public void StageClear()
+    {
+        Debug.Log(currentStage);
+
+        if (currentStage != -1)
+        {
+            levelsCleared = Mathf.Max(levelsCleared, currentStage);
+            PlayerPrefs.SetInt("S", levelsCleared);
+            currentStage = -1;
+            SceneFader.instance.FadeToScene("LevelSelect");
+        }
     }
 }

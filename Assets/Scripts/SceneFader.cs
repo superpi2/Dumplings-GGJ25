@@ -23,6 +23,8 @@ public class SceneFader : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        fadeImage.gameObject.SetActive(false);
     }
 
     public void FadeToScene(string scene)
@@ -35,6 +37,8 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator FadeToSceneC(string scene)
     {
+        fadeImage.gameObject.SetActive(true);
+
         float f = 0f;
 
         while (f < 1f)
@@ -59,6 +63,7 @@ public class SceneFader : MonoBehaviour
             fadeImage.color = new Color(1, 1, 1, f);
         }
 
+        fadeImage.gameObject.SetActive(false);
         currentPhase = null;
     }
 }
