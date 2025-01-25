@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Sharp
   layers:
   - Default
   - TransparentFX
@@ -39,9 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Platform
+    uniqueID: 2068031141
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Player
     uniqueID: 319121407
+    locked: 0
+  - name: Bubbles
+    uniqueID: 941347437
+    locked: 0
+  - name: Machines
+    uniqueID: 1724867457
     locked: 0
