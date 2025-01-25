@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        rb.velocity = new Vector2(1f, 0f);
+        rb.velocity = new Vector2(2f, 0f);
     }
 
     private void Update()
@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
         PhysicsLoop();
 
         if (wallLeft)
-            rb.velocity = new Vector2(1f, 0f);
+            rb.velocity = new Vector2(2f, 0f);
         else if (wallRight)
-            rb.velocity = new Vector2(-1f, 0f);
+            rb.velocity = new Vector2(-2f, 0f);
     }
 
     void PhysicsLoop()

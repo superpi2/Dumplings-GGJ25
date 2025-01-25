@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
+    public static KeyManager instance;
+
     public KeyCode[] keys;
     Dictionary<KeyCode, bool> keyStates;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -27,5 +34,10 @@ public class KeyManager : MonoBehaviour
                 Debug.Log(key + " " + keyStates[key]);
             }
         }
+    }
+
+    public bool IsMachineOn(KeyCode key)
+    {
+        return keyStates.TryGetValue(key, out bool r) && r;
     }
 }
