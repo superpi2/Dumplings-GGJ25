@@ -9,6 +9,8 @@ public class KeyManager : MonoBehaviour
 
     private void Start()
     {
+        keyStates = new Dictionary<KeyCode, bool>();
+
         foreach (KeyCode key in keys)
         {
             keyStates.Add(key, false);
@@ -22,6 +24,7 @@ public class KeyManager : MonoBehaviour
             if (Input.GetKeyDown(key))
             {
                 keyStates[key] = !keyStates[key];
+                Debug.Log(key + " " + keyStates[key]);
             }
         }
     }
