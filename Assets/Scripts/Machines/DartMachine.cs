@@ -35,7 +35,7 @@ public class DartMachine : MonoBehaviour
                 currentTarget = (currentTarget + 1) % path.Length;
         }
 
-        if (Input.GetKeyDown(fire) && cooldown <= 0)
+        if (KeyManager.instance.IsMachineFired(fire) && cooldown <= 0)
         {
             cooldown = delay;
 

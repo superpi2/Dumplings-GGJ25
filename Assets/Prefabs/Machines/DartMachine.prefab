@@ -189,6 +189,7 @@ MonoBehaviour:
   dartPrefab: {fileID: 2815306977029803928, guid: 2eb9f9690cf638140b2b1a51f85b0ca3, type: 3}
   dartDisplay: {fileID: 5570757120161288331}
   force: 10
+  delay: 0.25
 --- !u!1 &5570757120161288331
 GameObject:
   m_ObjectHideFlags: 0

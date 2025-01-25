@@ -38,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
 
+        if (!alive)
+            return;
+
         PhysicsLoop();
 
         if (wallLeft)
@@ -154,6 +157,9 @@ public class PlayerMovement : MonoBehaviour
     {
         alive = false;
         targetVelocity = 0f;
+        sprite.color = Color.white;
+
+        animator.SetBool("Frozen", freezeAmount >= 1f);
         animator.SetTrigger("Die");
     }
 }

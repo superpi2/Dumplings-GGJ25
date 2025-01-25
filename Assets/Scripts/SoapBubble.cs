@@ -19,6 +19,9 @@ public class SoapBubble : BasicBubble
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Sharp")
+            Destroy(collision.gameObject);
+
         base.OnTriggerEnter2D(collision);
 
         if (collision.gameObject.tag == "Player")

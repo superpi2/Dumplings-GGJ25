@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1198095339859274087}
   m_Layer: 0
   m_Name: FrozenBubble
-  m_TagString: Untagged
+  m_TagString: FrozenBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
