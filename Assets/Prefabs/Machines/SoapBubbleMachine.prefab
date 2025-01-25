@@ -65,6 +65,10 @@ PrefabInstance:
       value: SoapBubbleMachine
       objectReference: {fileID: 0}
     - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: delay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: force
       value: 5
       objectReference: {fileID: 0}

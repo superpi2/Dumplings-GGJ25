@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float targetVelocity;
 
+    float freezeAmount;
+    int freezeZones;
+
+    bool alive;
     bool grounded;
     bool wallLeft;
     bool wallRight;
@@ -20,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
         sprite = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+
+        alive = true;
+        freezeAmount = 0f;
     }
 
     private void Start()
@@ -40,6 +47,19 @@ public class PlayerMovement : MonoBehaviour
 
         sprite.flipX = targetVelocity < 0f;
         animator.SetBool("Falling", !grounded);
+
+        // freezing
+        if (freezeZones == 0)
+            freezeAmount -= Time.deltaTime;
+        else
+            freezeAmount += Time.deltaTime / 2f;
+
+        freezeAmount = Mathf.Clamp01(freezeAmount);
+
+        if (freezeAmount >= 1f)
+            PlayerDies();
+
+        sprite.color = new Color(1f - Mathf.Pow(freezeAmount, 2f), 1f, 1f, 1f);
     }
 
     void PhysicsLoop()
@@ -91,9 +111,49 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!alive)
+            return;
+
         if (collision.gameObject.tag == "Goal")
         {
             GameManager.instance.StageClear();
         }
+
+        if (collision.gameObject.tag == "Sharp")
+        {
+            PlayerDies();
+        }
+
+        if (collision.gameObject.tag == "Freeze")
+            freezeZones += 1;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!alive)
+            return;
+
+        if (collision.gameObject.tag == "Freeze")
+            freezeZones -= 1;
+    }
+
+    public void EnterBubble(GameObject bubble)
+    {
+        transform.SetParent(bubble.transform);
+        transform.localPosition = Vector3.zero;
+        rb.isKinematic = true;
+    }
+
+    public void ExitBubble()
+    {
+        transform.SetParent(null);
+        rb.isKinematic = false;
+    }
+
+    void PlayerDies()
+    {
+        alive = false;
+        targetVelocity = 0f;
+        animator.SetTrigger("Die");
     }
 }

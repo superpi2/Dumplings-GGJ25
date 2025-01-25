@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dart
       objectReference: {fileID: 0}
+    - target: {fileID: 2815306977029803928, guid: 2eb9f9690cf638140b2b1a51f85b0ca3, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4470936508841640284, guid: 2eb9f9690cf638140b2b1a51f85b0ca3, type: 3}
       propertyPath: m_SortingLayer
       value: 4

@@ -30,10 +30,8 @@ public class BasicBubble : MonoBehaviour
         freezeOverlay.color = new Color(1f, 1f, 1f, Mathf.Pow(freezeAmount, 2f));
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject);
-
         if (collision.gameObject.tag == "Sharp")
             Pop();
 
@@ -43,13 +41,11 @@ public class BasicBubble : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject);
-
         if (collision.gameObject.tag == "Freeze")
             freezeZones -= 1;
     }
 
-    protected void Pop()
+    protected virtual void Pop()
     {
         GetComponent<Animator>().SetTrigger("Pop");
         Destroy(gameObject, 0.2f);

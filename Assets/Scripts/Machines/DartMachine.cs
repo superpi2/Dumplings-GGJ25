@@ -12,7 +12,10 @@ public class DartMachine : MonoBehaviour
 
     public GameObject dartPrefab;
     public GameObject dartDisplay;
+
     public float force;
+    public float delay = 0.25f;
+
     float cooldown = 0f;
 
     private void Start()
@@ -34,7 +37,7 @@ public class DartMachine : MonoBehaviour
 
         if (Input.GetKeyDown(fire) && cooldown <= 0)
         {
-            cooldown = 0.25f;
+            cooldown = delay;
 
             GameObject proj = Instantiate(dartPrefab, transform.position, transform.rotation);
             proj.GetComponent<Rigidbody2D>().AddForce(force * transform.up, ForceMode2D.Impulse);

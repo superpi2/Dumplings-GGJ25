@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SoapBubble : BasicBubble
 {
+    PlayerMovement occupant;
+
     void Start()
     {
         transform.rotation = Quaternion.identity;
@@ -13,5 +15,24 @@ public class SoapBubble : BasicBubble
     {
         if (collision.gameObject.tag == "Ground")
             Pop();
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+
+        if (collision.gameObject.tag == "Player")
+        {
+            occupant = collision.gameObject.transform.parent.GetComponent<PlayerMovement>();
+            occupant.EnterBubble(gameObject);
+        }
+    }
+
+    protected override void Pop()
+    {
+        if (occupant != null)
+            occupant.ExitBubble();
+
+        base.Pop();
     }
 }
