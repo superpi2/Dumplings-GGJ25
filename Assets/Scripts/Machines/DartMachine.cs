@@ -37,7 +37,7 @@ public class DartMachine : MonoBehaviour
 
             GameObject proj = Instantiate(dartPrefab, transform.position, transform.rotation);
             proj.GetComponent<Rigidbody2D>().AddForce(force * transform.up, ForceMode2D.Impulse);
-            Destroy(proj, 5f);
+            Destroy(proj, 8f);
         }
     }
 }

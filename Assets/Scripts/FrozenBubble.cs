@@ -17,6 +17,7 @@ public class FrozenBubble : MonoBehaviour
 
         if (Mathf.Abs(rb.velocity.y) > 0.01f)
             vel.x = 0f;
+        vel.y = Mathf.Min(vel.y, 0f);
 
         rb.velocity = vel;
     }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2484422284926229788}
   - component: {fileID: 6919104203646986639}
   - component: {fileID: 2043463366255486414}
+  - component: {fileID: 1133865501375301451}
   m_Layer: 0
   m_Name: SoapBubble
   m_TagString: Untagged
@@ -76,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 941347437
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 378601939, guid: 0b2fb5bd28d0ac14bac24cecbb6aa292, type: 3}
+  m_Sprite: {fileID: -1587921518, guid: 18ad6d78cf477084c92e6c1197a0e35e, type: 3}
   m_Color: {r: 1, g: 0.6, b: 0.8, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3793104, y: 1.3795353}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -161,3 +162,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dffa9e9f81832142ac74d2bf51f017c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1133865501375301451
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903240536254817254}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef4335a9701b4ae4c954b34931d94e7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
