@@ -7,20 +7,20 @@ public class UnlockerButton : MonoBehaviour
     public GameObject indicator;
     public KeyCode unlockedKey;
 
-    bool enabled;
+    bool active;
 
     private void Start()
     {
-        enabled = true;
+        active = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!enabled) return;
+        if (!active) return;
 
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "FrozenBubble")
         {
-            enabled = false;
+            active = false;
             GetComponent<Collider2D>().enabled = false;
             StartCoroutine(Unlocked());
         }   

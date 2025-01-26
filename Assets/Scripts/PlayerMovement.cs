@@ -76,8 +76,8 @@ public class PlayerMovement : MonoBehaviour
 
         grounded = hits.Length > 0;
 
-        origin = (Vector2)transform.position + new Vector2(-0.3f, 0f);
-        size = new Vector2(1 / 32f, 0.75f);
+        origin = (Vector2)transform.position + new Vector2(-0.3f, 0.1f);
+        size = new Vector2(1 / 32f, 0.8f);
 
         wallLeft = false;
 
@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
         wallRight = false;
 
-        origin = (Vector2)transform.position + new Vector2(0.3f, 0f);
+        origin = (Vector2)transform.position + new Vector2(0.3f, 0.1f);
 
         hits = Physics2D.BoxCastAll(
             origin, size, 0f, Vector2.down, 0f, LayerMask.GetMask("Ground"));

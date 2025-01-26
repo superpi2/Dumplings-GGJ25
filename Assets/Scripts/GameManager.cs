@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static int currentStage = -1;
 
     public int levelsCleared = -1;
+    bool levelClear;
 
     public GameObject bubble;
     public GameObject frozenBubble;
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        levelClear = false;
 
         if (levelsCleared < 0)
             levelsCleared = Mathf.Max(0, PlayerPrefs.GetInt("S", 0));
@@ -50,12 +53,18 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(currentStage);
 
-        if (currentStage != -1)
+        if (currentStage != -1 && !levelClear)
         {
+            levelClear = true;
             levelsCleared = Mathf.Max(levelsCleared, currentStage);
             PlayerPrefs.SetInt("S", levelsCleared);
-            currentStage = -1;
-            SceneFader.instance.FadeToScene("LevelSelect");
+            currentStage += 1;
+            SceneFader.instance.FadeToScene("Stage" + currentStage);
         }
+    }
+
+    public void QuitToTitle()
+    {
+        SceneFader.instance.FadeToScene("Start Menu");
     }
 }
