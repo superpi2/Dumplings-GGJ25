@@ -66,8 +66,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: cda89f0e24e9a46f2a3625a405677f59, type: 3}
   - name: iceArrow
     clip: {fileID: 8300000, guid: b018529ea9ebe4d2fbaae392e25ed5b4, type: 3}
-  - name: iceStep
-    clip: {fileID: 8300000, guid: 54cc4878898a046deba58d253e8b8631, type: 3}
+  - name: deathSound
+    clip: {fileID: 8300000, guid: 972fdf9f395324e9ab8de0bfc53a9af7, type: 3}
 --- !u!82 &2275301676449582775
 AudioSource:
   m_ObjectHideFlags: 0
