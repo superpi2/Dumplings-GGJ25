@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6397548160747330208, guid: 9a202920f005edc4081e5a4c008982c0, type: 3}
       propertyPath: level
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -989,10 +989,10 @@ RectTransform:
   - {fileID: 2025086561}
   - {fileID: 827135930}
   - {fileID: 321943835}
-  - {fileID: 508741737}
-  - {fileID: 1597030617}
   - {fileID: 1247757962}
   - {fileID: 1888644374}
+  - {fileID: 508741737}
+  - {fileID: 1597030617}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1208,7 +1208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6397548160747330208, guid: 9a202920f005edc4081e5a4c008982c0, type: 3}
       propertyPath: level
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1326,7 +1326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6397548160747330208, guid: 9a202920f005edc4081e5a4c008982c0, type: 3}
       propertyPath: level
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1493,7 +1493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6397548160747330208, guid: 9a202920f005edc4081e5a4c008982c0, type: 3}
       propertyPath: level
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

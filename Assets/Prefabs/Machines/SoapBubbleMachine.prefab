@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: force
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: dartPrefab
