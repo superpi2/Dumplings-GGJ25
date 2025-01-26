@@ -21,5 +21,8 @@ public class Door : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, path[currentTarget], 10f * Time.deltaTime);
 
         currentTarget = KeyManager.instance.IsMachineOn(moveToggle) ? 1 : 0;
+
+        if (KeyManager.instance.IsMachineFired(moveToggle))
+            AudioManager.instance.PlaySFX("doorMove");
     }
 }

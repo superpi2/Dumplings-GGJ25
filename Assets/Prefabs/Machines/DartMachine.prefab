@@ -190,6 +190,7 @@ MonoBehaviour:
   dartDisplay: {fileID: 5570757120161288331}
   force: 10
   delay: 0.25
+  sound: iceArrow
 --- !u!1 &5570757120161288331
 GameObject:
   m_ObjectHideFlags: 0

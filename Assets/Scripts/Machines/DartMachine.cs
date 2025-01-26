@@ -16,6 +16,8 @@ public class DartMachine : MonoBehaviour
     public float force;
     public float delay = 0.25f;
 
+    public string sound;
+
     float cooldown = 0f;
 
     private void Start()
@@ -38,6 +40,7 @@ public class DartMachine : MonoBehaviour
         if (KeyManager.instance.IsMachineFired(fire) && cooldown <= 0)
         {
             cooldown = delay;
+            AudioManager.instance.PlaySFX(sound);
 
             GameObject proj = Instantiate(dartPrefab, transform.position, transform.rotation);
             proj.GetComponent<Rigidbody2D>().AddForce(force * transform.up, ForceMode2D.Impulse);
