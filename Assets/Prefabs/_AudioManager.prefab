@@ -45,7 +45,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1060d73901e1ddb48acb0b104bf9c60d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsRef: []
+  soundsRef:
+  - name: bgMusic
+    clip: {fileID: 8300000, guid: 1e89675a078e24332907c3c4a8d0daa9, type: 3}
+  - name: bubbleMaker
+    clip: {fileID: 8300000, guid: c5caf98a290ca4913bb920894b519382, type: 3}
+  - name: bubblePop
+    clip: {fileID: 8300000, guid: e1e9019c059514c5a9fd9bb94ae4dec3, type: 3}
+  - name: buttonPress
+    clip: {fileID: 8300000, guid: 480ba9b94ae364713afcc293f8a95ea0, type: 3}
+  - name: buttonRelease
+    clip: {fileID: 8300000, guid: bf3ae030e2667490ea9fadb5a0709209, type: 3}
+  - name: cloudStep
+    clip: {fileID: 8300000, guid: 5b93fadb829144377b6cc935ac6845a8, type: 3}
+  - name: doorMove
+    clip: {fileID: 8300000, guid: 437afeafdd27e49938904f5f3ed1b795, type: 3}
+  - name: freezeSound
+    clip: {fileID: 8300000, guid: 92914cde8fabb41b0b9236d3b4f690ae, type: 3}
+  - name: frozenPush
+    clip: {fileID: 8300000, guid: cda89f0e24e9a46f2a3625a405677f59, type: 3}
+  - name: iceArrow
+    clip: {fileID: 8300000, guid: b018529ea9ebe4d2fbaae392e25ed5b4, type: 3}
+  - name: iceStep
+    clip: {fileID: 8300000, guid: 54cc4878898a046deba58d253e8b8631, type: 3}
 --- !u!82 &2275301676449582775
 AudioSource:
   m_ObjectHideFlags: 0
