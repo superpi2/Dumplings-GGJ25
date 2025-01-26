@@ -35,10 +35,14 @@ public class AudioManager : MonoBehaviour
 
         if (sounds == null)
         {
+            sounds = new Dictionary<string, Sound>();
+
             foreach (Sound sound in soundsRef)
             {
                 sounds.Add(sound.name, sound);
             }
+
+            PlayBGM("bgMusic");
         }
     }
 

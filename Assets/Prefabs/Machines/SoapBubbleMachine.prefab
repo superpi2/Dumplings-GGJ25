@@ -113,6 +113,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: sound
+      value: bubbleMaker
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: dartPrefab
       value: 
       objectReference: {fileID: 5903240536254817254, guid: 9ac937afc83e7b7409cb9a64e9f5b127, type: 3}
