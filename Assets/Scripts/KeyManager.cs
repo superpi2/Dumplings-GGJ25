@@ -43,11 +43,11 @@ public class KeyManager : MonoBehaviour
 
     public bool IsMachineOn(KeyCode key)
     {
-        return keyStates.TryGetValue(key, out bool r) && r;
+        return !PauseMenu.instance.paused && keyStates.TryGetValue(key, out bool r) && r;
     }
 
     public bool IsMachineFired(KeyCode key)
     {
-        return keyStates.TryGetValue(key, out bool _) && Input.GetKeyDown(key);
+        return !PauseMenu.instance.paused && keyStates.TryGetValue(key, out bool _) && Input.GetKeyDown(key);
     }
 }

@@ -44,7 +44,7 @@ public class SceneFader : MonoBehaviour
         while (f < 1f)
         {
             yield return null;
-            f += 5f * Time.deltaTime;
+            f += 5f * Time.unscaledDeltaTime;
             f = Mathf.Clamp01(f);
 
             fadeImage.color = new Color(1, 1, 1, f);
@@ -52,12 +52,12 @@ public class SceneFader : MonoBehaviour
 
         SceneManager.LoadScene(scene);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         while (f > 0f)
         {
             yield return null;
-            f -= 5f * Time.deltaTime;
+            f -= 5f * Time.unscaledDeltaTime;
             f = Mathf.Clamp01(f);
 
             fadeImage.color = new Color(1, 1, 1, f);

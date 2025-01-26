@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
             SceneFader.instance.FadeToScene("Stage" + currentStage);
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (PauseMenu.instance != null && PauseMenu.instance.paused)
+            Time.timeScale = 0f;
+        else if (Input.GetKey(KeyCode.LeftShift))
             Time.timeScale = 3f;
         else
             Time.timeScale = 1f;
