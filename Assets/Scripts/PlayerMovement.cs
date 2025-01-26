@@ -163,6 +163,8 @@ public class PlayerMovement : MonoBehaviour
         targetVelocity = 0f;
         sprite.color = Color.white;
 
+        AudioManager.instance.PlaySFX("deathSound");
+
         animator.SetBool("Frozen", freezeAmount >= 1f);
         animator.SetTrigger("Die");
     }

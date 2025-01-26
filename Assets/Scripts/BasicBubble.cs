@@ -36,7 +36,10 @@ public class BasicBubble : MonoBehaviour
             Pop();
 
         if (collision.gameObject.tag == "Freeze")
+        {
+            AudioManager.instance.PlaySFX("freezeSound");
             freezeZones += 1;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -47,6 +50,8 @@ public class BasicBubble : MonoBehaviour
 
     protected virtual void Pop()
     {
+        AudioManager.instance.PlaySFX("bubblePop");
+
         GetComponent<Animator>().SetTrigger("Pop");
         Destroy(gameObject, 0.2f);
     }

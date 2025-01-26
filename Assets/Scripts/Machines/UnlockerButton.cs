@@ -31,6 +31,8 @@ public class UnlockerButton : MonoBehaviour
         KeyManager.instance.AddKey(unlockedKey);
         GetComponent<SpriteRenderer>().enabled = false;
 
+        AudioManager.instance.PlaySFX("buttonPress");
+
         yield return null;
 
         for (float t = 0f; t < 1f; t += Time.deltaTime * 4f)
@@ -40,5 +42,7 @@ public class UnlockerButton : MonoBehaviour
         }
 
         indicator.transform.localScale = Vector3.one * 1.2f;
+
+        AudioManager.instance.PlaySFX("buttonRelease");
     }
 }
