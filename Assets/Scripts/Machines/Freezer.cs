@@ -23,11 +23,11 @@ public class Freezer : MonoBehaviour
         if (KeyManager.instance.IsMachineOn(toggleFreezer))
         {
             machineSprite.sprite = sprites[1];
-            auraScale += 8f * Time.deltaTime;
+            auraScale += 10f * Time.deltaTime;
         } else
         {
             machineSprite.sprite = sprites[0];
-            auraScale -= 8f * Time.deltaTime;
+            auraScale -= 10f * Time.deltaTime;
         }
 
         auraScale = Mathf.Clamp(auraScale, 0f, 6f);

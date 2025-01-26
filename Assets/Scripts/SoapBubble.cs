@@ -13,18 +13,27 @@ public class SoapBubble : BasicBubble
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "FrozenBubble")
+        {
+            if (collision.collider.usedByEffector)
+                return;
+
             Pop();
+        }
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Sharp")
+            Destroy(collision.gameObject);
+
         base.OnTriggerEnter2D(collision);
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && occupant == null)
         {
             occupant = collision.gameObject.transform.parent.GetComponent<PlayerMovement>();
-            occupant.EnterBubble(gameObject);
+            bool v = occupant.EnterBubble(gameObject);
+            if (!v) occupant = null;
         }
     }
 
@@ -32,6 +41,8 @@ public class SoapBubble : BasicBubble
     {
         if (occupant != null)
             occupant.ExitBubble();
+
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
         base.Pop();
     }

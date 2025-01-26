@@ -20,7 +20,13 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
     }
 
     public void Start()
@@ -40,9 +46,12 @@ public class AudioManager : MonoBehaviour
     {
         Sound target = sounds[soundName];
 
-        source.Stop();
-        source.clip = target.clip;
-        source.Play();
+        if (source.clip != target.clip)
+        {
+            source.Stop();
+            source.clip = target.clip;
+            source.Play();
+        }
     }
 
     public void PlaySFX(string soundName)

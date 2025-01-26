@@ -38,6 +38,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(targetVelocity, rb.velocity.y);
 
+        if (!alive)
+            return;
+
         PhysicsLoop();
 
         if (wallLeft)
@@ -74,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         grounded = hits.Length > 0;
 
         origin = (Vector2)transform.position + new Vector2(-0.3f, 0f);
-        size = new Vector2(1 / 32f, 1f);
+        size = new Vector2(1 / 32f, 0.75f);
 
         wallLeft = false;
 
@@ -137,11 +140,15 @@ public class PlayerMovement : MonoBehaviour
             freezeZones -= 1;
     }
 
-    public void EnterBubble(GameObject bubble)
+    public bool EnterBubble(GameObject bubble)
     {
+        if (!alive || rb.isKinematic)
+            return false;
+
         transform.SetParent(bubble.transform);
         transform.localPosition = Vector3.zero;
         rb.isKinematic = true;
+        return true;
     }
 
     public void ExitBubble()
@@ -154,6 +161,9 @@ public class PlayerMovement : MonoBehaviour
     {
         alive = false;
         targetVelocity = 0f;
+        sprite.color = Color.white;
+
+        animator.SetBool("Frozen", freezeAmount >= 1f);
         animator.SetTrigger("Die");
     }
 }

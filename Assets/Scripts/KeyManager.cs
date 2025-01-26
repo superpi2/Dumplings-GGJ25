@@ -6,7 +6,7 @@ public class KeyManager : MonoBehaviour
 {
     public static KeyManager instance;
 
-    public KeyCode[] keys;
+    public List<KeyCode> keys;
     Dictionary<KeyCode, bool> keyStates;
 
     private void Awake()
@@ -35,8 +35,19 @@ public class KeyManager : MonoBehaviour
         }
     }
 
+    public void AddKey(KeyCode key)
+    {
+        keys.Add(key);
+        keyStates.Add(key, false);
+    }
+
     public bool IsMachineOn(KeyCode key)
     {
         return keyStates.TryGetValue(key, out bool r) && r;
+    }
+
+    public bool IsMachineFired(KeyCode key)
+    {
+        return keyStates.TryGetValue(key, out bool _) && Input.GetKeyDown(key);
     }
 }

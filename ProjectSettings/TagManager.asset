@@ -8,6 +8,7 @@ TagManager:
   - Sharp
   - Freeze
   - Goal
+  - FrozenBubble
   layers:
   - Default
   - TransparentFX
