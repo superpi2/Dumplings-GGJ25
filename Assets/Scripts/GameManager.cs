@@ -51,10 +51,10 @@ public class GameManager : MonoBehaviour
 
     public void StageClear()
     {
-        Debug.Log(currentStage);
-
         if (currentStage != -1 && !levelClear)
         {
+            AudioManager.instance.PlaySFX("winSound");
+
             levelClear = true;
             levelsCleared = Mathf.Max(levelsCleared, currentStage);
             PlayerPrefs.SetInt("S", levelsCleared);
