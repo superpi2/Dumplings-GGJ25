@@ -68,6 +68,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b018529ea9ebe4d2fbaae392e25ed5b4, type: 3}
   - name: deathSound
     clip: {fileID: 8300000, guid: 972fdf9f395324e9ab8de0bfc53a9af7, type: 3}
+  - name: winSound
+    clip: {fileID: 8300000, guid: ebcee82c581714cd5850d57dc5a785d7, type: 3}
 --- !u!82 &2275301676449582775
 AudioSource:
   m_ObjectHideFlags: 0
