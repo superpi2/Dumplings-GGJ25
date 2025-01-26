@@ -36,6 +36,8 @@ public class SoapBubble : BasicBubble
         if (occupant != null)
             occupant.ExitBubble();
 
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         base.Pop();
     }
 }

@@ -64,6 +64,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoapBubbleMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028762864931757078, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553225622275290264, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d6c44fe44b6d42545a75b89a51205b29, type: 3}
     - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: delay
       value: 0.5
@@ -76,8 +116,13 @@ PrefabInstance:
       propertyPath: dartPrefab
       value: 
       objectReference: {fileID: 5903240536254817254, guid: 9ac937afc83e7b7409cb9a64e9f5b127, type: 3}
+    - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
+      propertyPath: dartDisplay
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5570757120161288331, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
