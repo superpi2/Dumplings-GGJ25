@@ -25,15 +25,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && currentStage != -1)
+        if (!PauseMenu.instance.paused && (Input.GetKeyDown(KeyCode.R) || Input.GetAxis("Vertical") > 0.5f) && currentStage != -1)
         {
             SceneFader.instance.FadeToScene("Stage" + currentStage);
         }
 
         if (PauseMenu.instance != null && PauseMenu.instance.paused)
             Time.timeScale = 0f;
-        else if (Input.GetKey(KeyCode.LeftShift))
+        else if (Input.GetKey(KeyCode.LeftShift) || Input.GetAxis("Horizontal") > 0.5f)
             Time.timeScale = 3f;
+        else if (Input.GetAxis("Horizontal") < -0.5f)
+            Time.timeScale = 1 / 3f;
         else
             Time.timeScale = 1f;
     }

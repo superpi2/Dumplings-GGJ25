@@ -6,8 +6,8 @@ public class KeyManager : MonoBehaviour
 {
     public static KeyManager instance;
 
-    public List<KeyCode> keys;
-    Dictionary<KeyCode, bool> keyStates;
+    public List<string> keys;
+    Dictionary<string, bool> keyStates;
 
     private void Awake()
     {
@@ -16,9 +16,9 @@ public class KeyManager : MonoBehaviour
 
     private void Start()
     {
-        keyStates = new Dictionary<KeyCode, bool>();
+        keyStates = new Dictionary<string, bool>();
 
-        foreach (KeyCode key in keys)
+        foreach (string key in keys)
         {
             keyStates.Add(key, false);
         }
@@ -26,28 +26,28 @@ public class KeyManager : MonoBehaviour
 
     private void Update()
     {
-        foreach (KeyCode key in keys)
+        foreach (string key in keys)
         {
-            if (Input.GetKeyDown(key))
+            if (Input.GetButtonDown(key))
             {
                 keyStates[key] = !keyStates[key];
             }
         }
     }
 
-    public void AddKey(KeyCode key)
+    public void AddKey(string key)
     {
         keys.Add(key);
         keyStates.Add(key, false);
     }
 
-    public bool IsMachineOn(KeyCode key)
+    public bool IsMachineOn(string key)
     {
         return !PauseMenu.instance.paused && keyStates.TryGetValue(key, out bool r) && r;
     }
 
-    public bool IsMachineFired(KeyCode key)
+    public bool IsMachineFired(string key)
     {
-        return !PauseMenu.instance.paused && keyStates.TryGetValue(key, out bool _) && Input.GetKeyDown(key);
+        return !PauseMenu.instance.paused && keyStates.TryGetValue(key, out bool _) && Input.GetButtonDown(key);
     }
 }

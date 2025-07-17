@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public KeyCode moveToggle;
+    public string moveToggle;
 
     public Vector2[] path;
     int currentTarget;

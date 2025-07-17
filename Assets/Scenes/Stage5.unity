@@ -172,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5628701242523729857, guid: 3fdf5350c3f09fc4a93b99c14e30773e, type: 3}
       propertyPath: fire
-      value: 97
+      value: Button4
       objectReference: {fileID: 0}
     - target: {fileID: 8480560259531523603, guid: 3fdf5350c3f09fc4a93b99c14e30773e, type: 3}
       propertyPath: m_Name
@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093149194165323620, guid: 1fc1ea3802377124da0c27647170d0cd, type: 3}
       propertyPath: m_text
-      value: E
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -425,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8093149194165323620, guid: 1fc1ea3802377124da0c27647170d0cd, type: 3}
       propertyPath: m_text
-      value: A
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1807,11 +1807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3508114438039690811, guid: aa3e83b09f67ddb40878f55742b0cf3e, type: 3}
       propertyPath: keys.Array.data[0]
-      value: 97
+      value: Button3
       objectReference: {fileID: 0}
     - target: {fileID: 3508114438039690811, guid: aa3e83b09f67ddb40878f55742b0cf3e, type: 3}
       propertyPath: keys.Array.data[1]
-      value: 101
+      value: Button4
       objectReference: {fileID: 0}
     - target: {fileID: 3508114438039690811, guid: aa3e83b09f67ddb40878f55742b0cf3e, type: 3}
       propertyPath: keys.Array.data[2]
@@ -1916,7 +1916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: fire
-      value: 101
+      value: Button3
       objectReference: {fileID: 0}
     - target: {fileID: 8801704717214832742, guid: 6aec6087a8eb4b344b3506f6706d27bf, type: 3}
       propertyPath: moveToggle

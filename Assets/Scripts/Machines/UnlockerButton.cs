@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnlockerButton : MonoBehaviour
 {
     public GameObject indicator;
-    public KeyCode unlockedKey;
+    public string unlockedKey;
 
     bool active;
 

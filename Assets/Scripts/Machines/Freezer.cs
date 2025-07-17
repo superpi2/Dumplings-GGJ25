@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Freezer : MonoBehaviour
 {
-    public KeyCode toggleFreezer;
+    public string toggleFreezer;
 
     public SpriteRenderer machineSprite;
     public GameObject auraField;

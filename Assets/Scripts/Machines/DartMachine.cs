@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DartMachine : MonoBehaviour
 {
-    public KeyCode moveToggle;
-    public KeyCode fire;
+    public string moveToggle;
+    public string fire;
 
     public Vector2[] path;
     int currentTarget;
